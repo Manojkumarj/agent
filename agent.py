@@ -72,7 +72,7 @@ def extract_trending_products(name: str, url: str):
 
     print("🤖 Analyzing with Gemini...")
     response = model.generate_content([
-        prompt,
+        {"text": prompt},
         {"mime_type": "image/png", "data": image_bytes}
     ])
 
@@ -92,9 +92,7 @@ def extract_trending_products(name: str, url: str):
 # 🔁 Trending Categories
 # --------------------------
 categories = {
-    "Electronics": "https://www.amazon.in/gp/bestsellers/electronics/ref=zg_bs_nav_electronics_0",
-    "Grocery": "https://www.amazon.in/s?i=grocery&bbn=2454178031&rh=n%3A2454178031&dc",
-    "Fashion": "https://www.amazon.in/gp/bestsellers/fashion"
+    "Grocery": "https://www.amazon.in/s?i=grocery&bbn=2454178031&rh=n%3A2454178031&dc"
 }
 
 # --------------------------
